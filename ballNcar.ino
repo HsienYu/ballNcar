@@ -45,7 +45,7 @@ void go() {
     previousMillis = currentMillis;
 
     // Set random interval
-    interval = random(1000, 5000); // Random delay between 1 to 5 seconds
+    interval = random(1000, 10000); // Random delay between 1 to 5 seconds
 
     // Set random movement
     int randomMovement = random(6); // Generate a random number between 0 to 5
@@ -81,8 +81,8 @@ void go() {
         digitalWrite(DB, HIGH);
         break;
       case 5:
-        digitalWrite(DA, LOW);
-        digitalWrite(DB, LOW);
+        digitalWrite(DA, HIGH);
+        digitalWrite(DB, HIGH);
         break;
     }
   }
