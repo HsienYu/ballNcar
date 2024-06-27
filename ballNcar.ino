@@ -25,6 +25,14 @@ const char* password = "luckyhousepro";
 AsyncWebServer server(80);
 
 
+// Set your Static IP address
+IPAddress local_IP(192, 168, 1, 101);
+// Set your Gateway IP address
+IPAddress gateway(192, 168, 1, 1);
+
+IPAddress subnet(255, 255, 0, 0);
+
+
 bool state = 0;
 
 const int PWMA=D1;//Right side 
@@ -103,6 +111,7 @@ void setup(void) {
   // Connect to Wi-Fi
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
+    stop();
     delay(1000);
     Serial.println("Connecting to WiFi..");
   }
